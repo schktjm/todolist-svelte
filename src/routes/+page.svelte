@@ -13,5 +13,8 @@
 	<Todolist />
 </section>
 
-<style>
+<style lang="scss">
+	h1 {
+		font-family: var(--font-title);
+	}
 </style>
