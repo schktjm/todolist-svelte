@@ -24,7 +24,6 @@
 
 <div class="wrapper">
 	<label>
-		{status}
 		{#if isChecked}
 			<img src={checked} alt="" />
 		{:else}
@@ -39,7 +38,6 @@
 
 <style lang="scss">
 	.wrapper {
-		background-color: aqua;
 		input[type='checkbox'] {
 			visibility: hidden;
 		}

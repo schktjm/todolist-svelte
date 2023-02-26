@@ -46,7 +46,6 @@
 <ul>
 	{#each todos as todo (todo.id)}
 		{#if !(isHideDone && todo.status === 'done')}
-			{JSON.stringify(todo)}
 			<Todo {...todo} on:change={handleChange} />
 		{/if}
 	{/each}
