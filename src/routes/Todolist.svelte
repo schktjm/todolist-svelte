@@ -22,6 +22,11 @@
 			id: '4',
 			status: 'todo',
 			text: '洗濯物干す'
+		},
+		{
+			id: '5',
+			status: 'todo',
+			text: 'マイナンバーカードが落ちてないか警察署に行く'
 		}
 	];
 
@@ -43,10 +48,18 @@
 	完了済みの項目を隠す
 </label>
 
-<ul>
+<ul class="todo-list">
 	{#each todos as todo (todo.id)}
 		{#if !(isHideDone && todo.status === 'done')}
 			<Todo {...todo} on:change={handleChange} />
 		{/if}
 	{/each}
 </ul>
+
+<style lang="scss">
+	.todo-list {
+		padding: 0;
+		margin: 0;
+		margin-top: 1rem;
+	}
+</style>

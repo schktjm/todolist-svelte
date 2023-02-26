@@ -16,5 +16,8 @@
 <style lang="scss">
 	h1 {
 		font-family: var(--font-title);
+		font-weight: 400;
+		font-size: 32px;
+		text-align: center;
 	}
 </style>
