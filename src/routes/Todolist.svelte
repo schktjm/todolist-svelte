@@ -2,7 +2,7 @@
 	import Todo from './Todo.svelte';
 	import type { Todo as TodoType } from './type';
 
-	const todos: TodoType[] = [
+	let todos: TodoType[] = [
 		{
 			id: '1',
 			status: 'todo',
@@ -25,7 +25,17 @@
 		}
 	];
 
-	let isHideDone = true;
+	function handleChange(event: CustomEvent<TodoType>) {
+		console.log(event.detail);
+		todos = todos.map((todo) => {
+			if (todo.id === event.detail.id) {
+				return event.detail;
+			}
+			return todo;
+		});
+	}
+
+	let isHideDone = false;
 </script>
 
 <label>
@@ -36,7 +46,8 @@
 <ul>
 	{#each todos as todo (todo.id)}
 		{#if !(isHideDone && todo.status === 'done')}
-			<Todo {...todo} />
+			{JSON.stringify(todo)}
+			<Todo {...todo} on:change={handleChange} />
 		{/if}
 	{/each}
 </ul>
